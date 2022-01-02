@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="7">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:padding="12dp">
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchMaterial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true" />
+
+
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="end"
+                android:text="0"
+                style="@style/ResultColor"
+                android:textSize="48sp" />
+
+            <TextView
+                android:id="@+id/tvActions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvResult"
+                android:layout_centerVertical="true"
+                android:gravity="end"
+                android:textSize="24sp" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:orientation="vertical"
+            android:padding="6dp"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/tvClear"
+                    style="@style/ActionColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="C"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tvPlusMinus"
+                    style="@style/ActionColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="+ / -"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tvPercent"
+                    style="@style/ActionColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="%"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tvDiv"
+                    style="@style/ActionColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="/"
+                    android:textSize="28sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/tvSeven"
+                    style="@style/NumberColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="7"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tvEight"
+                    style="@style/NumberColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="8"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tvNine"
+                    style="@style/NumberColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="9"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tvMultiple"
+                    style="@style/ActionColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="*"
+                    android:textSize="28sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/tvFour"
+                    style="@style/NumberColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="4"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tvFive"
+                    style="@style/NumberColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="5"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tvSix"
+                    style="@style/NumberColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="6"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tvMinus"
+                    style="@style/ActionColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="-"
+                    android:textSize="28sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/tvOne"
+                    style="@style/NumberColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="1"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tvTwo"
+                    style="@style/NumberColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="2"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tvThree"
+                    style="@style/NumberColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="3"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tvPlus"
+                    style="@style/ActionColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="+"
+                    android:textSize="28sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/tvZero"
+                    style="@style/NumberColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="0"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tvDot"
+                    style="@style/NumberColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="."
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tvDelete"
+                    style="@style/ActionColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="x"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tvEqual"
+                    style="@style/ActionColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shadow"
+                    android:gravity="center"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="="
+                    android:textSize="28sp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
