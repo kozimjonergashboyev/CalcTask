@@ -1,5 +1,7 @@
 package uz.kozimjon.calctask;
 
+
+// Java code
 public class Calc {
     public static Double calc(String time) {
         if (time.charAt(0) == 43 || time.charAt(0) == 45)

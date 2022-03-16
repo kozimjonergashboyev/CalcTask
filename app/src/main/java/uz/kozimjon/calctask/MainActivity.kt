@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.switchmaterial.SwitchMaterial
+import io.paperdb.Paper
 import uz.kozimjon.calctask.databinding.ActivityMainBinding
+import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,7 +20,19 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        Paper.init(this)
+
+        val actions: String? = Paper.book().read("actions")
+        val result: String? = Paper.book().read("result")
+        if (!actions.isNullOrEmpty() && !result.isNullOrEmpty()) {
+            binding.tvActions.text = actions
+            binding.tvResult.text = result
+        }
+
         binding.switchMaterial.setOnCheckedChangeListener { _, isChecked ->
+            Paper.book().write("actions", binding.tvActions.text.toString())
+            Paper.book().write("result", binding.tvResult.text.toString())
+
             if (isChecked) {
                 delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_YES
             } else {
@@ -92,7 +106,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.tvEqual.setOnClickListener {
-            binding.tvResult.text = stringFromJNI(Calc.calc(binding.tvActions.text.toString()).toString())
+            var result = Calc.calc(binding.tvActions.text.toString()).toString()
+
+            if (result.reversed()[0] == '0' && result.reversed()[1] == '.') {
+                result = result.toDouble().roundToInt().toString()
+            }
+
+            binding.tvResult.text = stringFromJNI(result)
         }
 
         binding.tvPercent.setOnClickListener {
